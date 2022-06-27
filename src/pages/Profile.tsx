@@ -1,7 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 
 const Profile: FC = () => {
-
   return <h1>Hello profile</h1>;
 };
 
