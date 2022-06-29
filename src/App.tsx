@@ -1,28 +1,29 @@
 import React, { FC } from "react";
+// Routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Theme
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme-provider";
+// Local components
 import Nav from "./components/navigation/Nav";
-import Home from "./pages/Home";
+import AnalysisDashboard from "./pages/AnalysisDashboard";
 import Profile from "./pages/Profile";
-import Meals from "./pages/Meals";
-import Cart from "./pages/Cart";
-import FoodsList from "./pages/FoodsList";
+import AnalysisDetail from "./pages/AnalysisDetail";
 
 const App: FC = () => {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Nav />
-      </ThemeProvider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/meals" element={<Meals />} />
-        <Route path="/meals/:mealId" element={<FoodsList />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/user" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <div style={{ backgroundColor: "#FFFFFB", height: "100vh" }}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Nav />
+        </ThemeProvider>
+        <Routes>
+          <Route path="/" element={<AnalysisDashboard />} />
+          <Route path="/analysis/:analysisId" element={<AnalysisDetail />} />
+          <Route path="/user" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

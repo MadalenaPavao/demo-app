@@ -21,10 +21,10 @@ const NavItem: FC<NavItemProps> = ({ to, label, Icon }) => {
     <Tooltip title={label} placement="bottom">
       {Icon ? (
         <IconButton component={RouterLink} to={to}>
-          <Icon color={matching ? "secondary" : "inherit"} />
+          <Icon color={matching ? "primary" : "inherit"} />
         </IconButton>
       ) : (
-        <Button component={RouterLink} to={to}>
+        <Button component={RouterLink} to={to} color={matching ? "primary" : "inherit"}>
           {label}
         </Button>
       )}
